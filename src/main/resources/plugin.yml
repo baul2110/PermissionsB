@@ -1,0 +1,4 @@
+name: PermissionsB
+version: '${version}'
+main: de.baul.permissionsb.PermissionsB
+api-version: '1.20'
