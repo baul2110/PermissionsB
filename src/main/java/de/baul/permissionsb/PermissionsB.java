@@ -7,8 +7,6 @@ public class PermissionsB extends JavaPlugin {
 
   private static PermissionsB instance;
 
-  public static Language text;
-
   @Override
   public void onEnable() {
     instance = this;
