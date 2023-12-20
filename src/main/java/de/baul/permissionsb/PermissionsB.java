@@ -1,7 +1,6 @@
 package de.baul.permissionsb;
 
 import de.baul.permissionsb.language.Language;
-import java.util.Objects;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PermissionsB extends JavaPlugin {
@@ -14,8 +13,8 @@ public class PermissionsB extends JavaPlugin {
   public void onEnable() {
     instance = this;
     saveResource("config.yml", false); //erstellt config.yml file wenn noch nicht erstellt
-    loadLanguage();
-    System.out.println(text.LOAD_MESSAGE);
+    Language.loadMessages("en");
+    System.out.println(Language.getMessage("TEST_TEXT_1"));
   }
 
   @Override
@@ -27,12 +26,5 @@ public class PermissionsB extends JavaPlugin {
     return instance;
   }
 
-  public void loadLanguage() {
-    if(getConfig().get("language") != null) {
-      text = new Language((String) Objects.requireNonNull(getConfig().get("language")));
-    } else {
-      text = new Language("");
-    }
-  }
 
 }
