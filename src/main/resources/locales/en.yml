@@ -1,0 +1,18 @@
+#if you want to reset the texts back to the default
+#delete this file and restart/reload your server
+
+#if you want to add a new language copy a language
+#file and change all texts to the new language
+
+Testmessages:
+  TEST_TEXT_1: Hallo1
+  TEST_TEXT_2: Hallo2
+  TEST_TEXT_3: Hallo3
+
+Database:
+  DB_FILE_DOESNT_EXIST_ERROR: DB_FILE_DOESNT_EXIST_ERROR
+  DB_CONNECT_ERROR: DB_CONNECT_ERROR
+  DB_DISCONNECT_ERROR: DB_DISCONNECT_ERROR
+  DB_WAS_NOT_CONNECTED_ERROR: The database was not connected.
+  DB_SUCCESSFULLY_CONNECTED: The database is connected.
+  DB_SUCCESSFULLY_DISCONNECTED: The database is disconnected.
