@@ -8,6 +8,11 @@ public class Group {
   private String prefix;
   private final ArrayList<String> permissions = new ArrayList<>();
 
+
+  public boolean equals(Group group) {
+    return name.equals(group.getName());
+  }
+
   public Group(String name) {
     this.name = name;
     this.prefix = "[" + name + "]";

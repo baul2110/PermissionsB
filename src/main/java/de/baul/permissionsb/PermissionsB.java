@@ -1,12 +1,16 @@
 package de.baul.permissionsb;
 
 import de.baul.permissionsb.database.DatabaseUtil;
+import de.baul.permissionsb.group.GroupPlayer;
 import de.baul.permissionsb.language.Language;
+import java.util.ArrayList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PermissionsB extends JavaPlugin {
 
   private static PermissionsB instance;
+
+  public static ArrayList<GroupPlayer> allPlayers = new ArrayList<>();
 
   private DatabaseUtil db;
 
@@ -15,14 +19,18 @@ public class PermissionsB extends JavaPlugin {
     instance = this;
     createResources();
     Language.loadMessages("en");
-    System.out.println(Language.getMessage("TEST_TEXT_1"));
     db = new DatabaseUtil();
-    db.connect();
+    if(!db.connect()) {
+      return;
+    }
+    System.out.println(Language.getMessage("PLUGIN_ENABLED"));
   }
 
   @Override
   public void onDisable() {
     db.disconnect();
+
+    System.out.println(Language.getMessage("PLUGIN_DISABLED"));
   }
 
   public static PermissionsB getInstance() {
@@ -32,7 +40,7 @@ public class PermissionsB extends JavaPlugin {
   public void createResources() {
     saveResource("config.yml", false);
     saveResource("database.yml", false);
-    saveResource("locales/en.yml", true);
+    saveResource("locales/en.yml", true); //TODO: Change replace to false
   }
 
 }

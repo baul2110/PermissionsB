@@ -4,10 +4,9 @@
 #if you want to add a new language copy a language
 #file and change all texts to the new language
 
-Testmessages:
-  TEST_TEXT_1: Hallo1
-  TEST_TEXT_2: Hallo2
-  TEST_TEXT_3: Hallo3
+Loading:
+  PLUGIN_ENABLED: Plugin has been enabled!
+  PLUGIN_DISABLED: Plugin has been disabled!
 
 Database:
   DB_FILE_DOESNT_EXIST_ERROR: DB_FILE_DOESNT_EXIST_ERROR
